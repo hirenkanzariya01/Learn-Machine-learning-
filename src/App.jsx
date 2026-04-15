@@ -6,7 +6,7 @@ import HomePage from './pages/HomePage'
 import TopicPage from './pages/TopicPage'
 import DashboardPage from './pages/DashboardPage'
 import NotFoundPage from './pages/NotFoundPage'
-
+import Footer from './components/Footer'
 export default function App() {
   const darkMode = useStore(s => s.darkMode)
 
@@ -18,7 +18,7 @@ export default function App() {
     }
   }, [darkMode])
 
-  return (
+  return (<>
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -28,5 +28,7 @@ export default function App() {
         <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>
     </Layout>
+    <Footer />
+  </>
   )
 }
